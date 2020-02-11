@@ -9,6 +9,7 @@ DISPLAY_TIME_MS = 2000
 COLOR_CHANGE_TIME_MS = 100
 FPS = 60
 MESSAGE_SPEED = -1.0
+PADDING_SIZE = 4
 
 
 def random_color():
@@ -26,7 +27,8 @@ def create_text_message(message, font, size, color):
 
 
 def main():
-    message = sys.argv[1]
+    padding = ' ' * PADDING_SIZE
+    message = padding + sys.argv[1] + padding
     start_time = pygame.time.get_ticks()
     pygame.init()
     text_message = create_text_message(message, 'Sans', 128, (0, 0, 0))
